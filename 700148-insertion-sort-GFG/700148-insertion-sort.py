@@ -6,7 +6,7 @@ class Solution:
             if(arr[i]<arr[i-1]):
                 key = arr[i]
                 for j in range(i-1,-2,-1):
-                    if(arr[j]<key) or j<0:
+                    if j<0 or (arr[j]<key) :
                         arr[j+1] = key
                         break
                     else :
