@@ -5,23 +5,17 @@ class Solution(object):
         :rtype: List[int]
         """
 
-        n = len(nums)
-        pos = []
-        neg = []
-        
-        for i in range(n):
+        p,n = 0,1
+        length = len(nums)
+        res = [0] * length
+        for i in range(length):
             if nums[i]<0:
-                neg.append(nums[i])
+                res[n] = nums[i]
+                n+=2
             else:
-                pos.append(nums[i])
-
-        i=0
-        while i<len(pos):
-            nums[i*2] = pos[i]
-            nums[(i*2)+1] = neg[i]
-            i+=1
-            
-        return nums
+                res[p] = nums[i]
+                p+=2
+        return res
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
