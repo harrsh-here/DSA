@@ -8,20 +8,20 @@ class Solution(object):
         n = len(nums)
         pos = []
         neg = []
-        res = []
+        
         for i in range(n):
             if nums[i]<0:
                 neg.append(nums[i])
             else:
                 pos.append(nums[i])
 
-        i,j = 0,0
-        while i<len(pos) or j<len(neg):
-            res.append(pos[i])
-            res.append(neg[j])
+        i=0
+        while i<len(pos):
+            nums[i*2] = pos[i]
+            nums[(i*2)+1] = neg[i]
             i+=1
-            j+=1
-        return res
+            
+        return nums
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
