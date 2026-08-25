@@ -12,10 +12,9 @@ class Solution(object):
         while low <= high:
             mid = (low + high) // 2
             
-            if nums[mid] == target :
-                return mid
+
                 
-            elif nums[mid] > target:
+            if nums[mid] >= target:
                 lb = mid
                 high = mid - 1
             else :
