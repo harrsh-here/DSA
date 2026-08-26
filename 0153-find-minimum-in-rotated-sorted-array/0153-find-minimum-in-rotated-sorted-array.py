@@ -8,12 +8,10 @@ class Solution(object):
         low = 0
         high = n - 1
         minimum = float('inf')
-        if nums[low] <= nums[high]:
-            minimum = min(minimum, nums[low])
-            return minimum
+
         while low <= high:
             mid = (low + high) // 2
-            print("low : ", low, "mid : ", mid, "High ", high)
+            # print("low : ", low, "mid : ", mid, "High ", high
             minimum = min(minimum, nums[mid])
 
             if nums[low] <= nums[mid]:
@@ -23,9 +21,14 @@ class Solution(object):
 
 
             else:
-                high = mid - 1
-        return minimum
+                if nums[high]  <= nums[mid]:
+                    minimum = min(minimum, nums[high])
+                    low = mid+1
 
+
+                else:
+                    high = mid - 1
+        return minimum
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
