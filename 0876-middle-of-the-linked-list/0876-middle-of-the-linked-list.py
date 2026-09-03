@@ -9,18 +9,11 @@ class Solution(object):
         :type head: Optional[ListNode]
         :rtype: Optional[ListNode]
         """
-        curr = head
-        count = 0
-        while curr:
-            curr = curr.next
-            count+=1
-        curr = head
-        count = (count//2) 
-
-        while curr and count != 0:
-            curr = curr.next
-            count -=1
-        return curr
+        mid, end = head,head
+        while end and end.next:
+            mid = mid.next
+            end = end.next.next
+        return mid
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
