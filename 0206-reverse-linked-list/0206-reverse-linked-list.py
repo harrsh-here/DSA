@@ -11,16 +11,15 @@ class Solution(object):
         curr = head
         prev = None
 
-        while curr.next:
+        while curr:
             next_node = curr.next
             curr.next = prev
             prev = curr
             curr = next_node
 
-        curr.next = prev
-        head = curr
 
-        return head
+
+        return prev
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
