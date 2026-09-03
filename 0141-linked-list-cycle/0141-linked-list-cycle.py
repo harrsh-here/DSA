@@ -6,20 +6,13 @@
 
 class Solution(object):
     def hasCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
-
-        curr = head
-        adr = set()
+        sr, fr = head, head
         
-        while curr and curr.next:
-            if curr in adr:
+        while fr and fr.next:
+            sr = sr.next
+            fr = fr.next.next
+            if sr == fr:
                 return True
-            adr.add(curr)
-            curr = curr.next
-        
         return False
 
 # Synced seamlessly with LeetHub Pro
