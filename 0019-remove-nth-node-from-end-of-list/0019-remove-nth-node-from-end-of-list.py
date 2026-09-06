@@ -10,26 +10,19 @@ class Solution(object):
         :type n: int
         :rtype: Optional[ListNode]
         """
-        curr = head 
-        length = 0
-        
-        while curr:
-            length+=1
-            curr = curr.next
-        if length == n:
+        p = head #parent
+        c = head  #child
+        for _ in range(n):
+            c = c.next
+        if c == None :
             temp = head
             head = head.next
             del temp
             return head
-        curr = head
-        count = length - n
- 
-        
-        for i in range(1,count):
-            curr = curr.next
-
- 
-        curr.next = curr.next.next
+        while c.next :
+            p = p.next
+            c = c.next
+        p.next = p.next.next
         return head
 
 # Synced seamlessly with LeetHub Pro
