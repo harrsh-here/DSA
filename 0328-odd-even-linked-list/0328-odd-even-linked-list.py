@@ -9,7 +9,7 @@ class Solution(object):
         curr_odd = head
         even_head = curr_odd.next
         curr_even = even_head
-        while curr_odd.next and curr_even.next:
+        while curr_even and curr_even.next:
             curr_odd.next = curr_even.next
             curr_odd = curr_even.next
 
