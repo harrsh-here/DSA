@@ -28,9 +28,7 @@ class Solution(object):
         for i in range(1,count):
             curr = curr.next
 
-        if not curr.next:
-            return curr 
-            
+ 
         curr.next = curr.next.next
         return head
 
