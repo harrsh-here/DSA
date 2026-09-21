@@ -17,7 +17,7 @@ class Solution:
         p = head
         q = curr
         
-        while p.data<q.data:
+        while p and q and p.data<q.data:
             total = p.data +q.data
             if total == target:
                 res.append([p.data,q.data])
