@@ -14,22 +14,16 @@ class Solution:
         elem = curr
        
        
-        while curr.next:
-           if curr.data != elem.data:
-               elem.next = curr
-               
-               curr.prev = elem
-               elem = curr
-           curr = curr.next
-           
-        if curr.data != elem.data:
-               elem.next = curr
-               
-               curr.prev = elem
-               elem = curr
-        else:
-            elem.next = None
+        while curr and curr.next:
+           if curr.data == curr.next.data:
+               next_node = curr.next.next
+               curr.next = next_node
+               if next_node:
+                   next_node.prev = curr
+           else:
+                curr = curr.next
         return headRef
+               
 
 # Synced seamlessly with LeetHub Pro
 # Pro features: https://bit.ly/leethubpro | Free version: https://bit.ly/leethubv4
