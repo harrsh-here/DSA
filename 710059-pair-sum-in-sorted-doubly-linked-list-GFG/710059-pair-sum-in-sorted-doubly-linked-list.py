@@ -10,6 +10,8 @@ class Node:
 class Solution:
     def givenSumPairs(self, head, target):
         # code here
+        if not head:
+            return []
         res =  []
         curr = head
         while curr.next:
@@ -23,9 +25,9 @@ class Solution:
                 res.append([p.data,q.data])
                 p = p.next
                 q = q.prev
-            if total < target:
+            elif total < target:
                 p = p.next
-            if total > target:
+            elif total > target:
                 q = q.prev
         return res
 
